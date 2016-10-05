@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PearXLib.SQL</id>
+    <version>0.0.0</version>
+    <authors>PearX Team</authors>
+    <owners>PearX Team</owners>
+    <licenseUrl>https://github.com/PearXTeam/PearXLib.SQL/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/PearXTeam/PearXLib.SQL</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/PearXTeam/PearXLib.SQL/master/logo_pxlsql.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>An open-source PearXLib's extension, that adds useful MySQL additions.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) PearX Team, 2015-2016</copyright>
+    <tags>pearxlib pearxlibsql sql pearxlib.sql mysql</tags>
+    <dependencies>
+      <dependency id="MySql.Data" version="6.9.9"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="PearXLib.SQL/bin/Release/PearXLib.SQL.dll" target="lib/net40" />
+    <file src="PearXLib.SQL/bin/Release/PearXLib.SQL.xml" target="lib/net40" />
+  </files>
+</package>

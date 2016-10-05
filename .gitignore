@@ -1,0 +1,6 @@
+PearXLib.SQL/obj/*
+PearXLib.SQL/bin/*
+.vs/*
+.directory
+*.userprefs
+packages/*
