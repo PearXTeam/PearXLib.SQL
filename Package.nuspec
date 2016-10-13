@@ -12,7 +12,7 @@
     <description>An open-source PearXLib's extension, that adds useful MySQL additions.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright (c) PearX Team, 2015-2016</copyright>
-    <tags>pearxlib pearxlibsql sql pearxlib.sql mysql</tags>
+    <tags>pearxlib pearxlibsql sql pearxlib.sql mysql pxlsql</tags>
     <dependencies>
       <dependency id="MySql.Data" version="6.9.9"/>
     </dependencies>
