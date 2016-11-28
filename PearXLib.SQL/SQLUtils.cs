@@ -5,7 +5,7 @@ namespace PearXLib.SQL
 	{
 		public static string FormatRequest(string req)
 		{
-			return req.Replace("'", "''");
+			return req.Replace("'", @"\'").Replace("\"", "\\\"").Replace("%", @"\%").Replace("\n", @"\n");
 		}
 	}
 }

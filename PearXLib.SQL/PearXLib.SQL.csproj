@@ -31,7 +31,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\DocArrayServer\packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
+      <HintPath>..\..\DocArray\packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
