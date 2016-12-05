@@ -3,8 +3,16 @@ using MySql.Data.MySqlClient;
 
 namespace PearXLib.SQL
 {
+	/// <summary>
+	/// MySQL extensions.
+	/// </summary>
 	public static class SQLExtensions
 	{
+		/// <summary>
+		/// Executes a command and gets a list of rows.
+		/// </summary>
+		/// <returns>A list of rows.</returns>
+		/// <param name="cmd">Command.</param>
 		public static List<Dictionary<string, string>> ExecuteListRows(this MySqlCommand cmd)
 		{
 			List<Dictionary<string, string>> lst = new List<Dictionary<string, string>>();
@@ -23,6 +31,11 @@ namespace PearXLib.SQL
 			return lst;
 		}
 
+		/// <summary>
+		/// Executes a command and gets a list of columns.
+		/// </summary>
+		/// <returns>A list of columns.</returns>
+		/// <param name="cmd">Command.</param>
 		public static Dictionary<string, List<string>> ExecuteListColumns(this MySqlCommand cmd)
 		{
 			Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
@@ -44,6 +57,11 @@ namespace PearXLib.SQL
 			return dict;
 		}
 
+		/// <summary>
+		/// Executes a command and gets a single list.
+		/// </summary>
+		/// <returns>A single list.</returns>
+		/// <param name="cmd">Command.</param>
 		public static List<string> ExecuteSingleList(this MySqlCommand cmd)
 		{
 			List<string> lst = new List<string>();
