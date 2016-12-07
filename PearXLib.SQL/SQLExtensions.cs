@@ -23,7 +23,14 @@ namespace PearXLib.SQL
 					Dictionary<string, string> dict = new Dictionary<string, string>();
 					for (int i = 0; i < rdr.FieldCount; i++)
 					{
-						dict.Add(rdr.GetName(i), rdr.GetString(i));
+						try
+						{
+							dict.Add(rdr.GetName(i), rdr.GetString(i));
+						}
+						catch
+						{
+							dict.Add(rdr.GetName(i), null);
+						}
 					}
 					lst.Add(dict);
 				}
@@ -50,7 +57,14 @@ namespace PearXLib.SQL
 				{
 					for (int i = 0; i < rdr.FieldCount; i++)
 					{
-						dict[rdr.GetName(i)].Add(rdr.GetString(i));
+						try
+						{
+							dict[rdr.GetName(i)].Add(rdr.GetString(i));
+						}
+						catch
+						{
+							dict[rdr.GetName(i)].Add(null);
+						}
 					}
 				}
 			}
@@ -69,7 +83,14 @@ namespace PearXLib.SQL
 			{
 				while (rdr.Read())
 				{
-					lst.Add(rdr.GetString(0));
+					try
+					{
+						lst.Add(rdr.GetString(0));
+					}
+					catch
+					{
+						lst.Add(null);
+					}
 				}
 			}
 			return lst;
