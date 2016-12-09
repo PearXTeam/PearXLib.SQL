@@ -13,7 +13,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of rows.</returns>
 		/// <param name="cmd">Command.</param>
-		public static List<Dictionary<string, string>> ExecuteListRows(this MySqlCommand cmd)
+		public static List<Dictionary<string, string>> ExecuteListRows(this MySqlCommand cmd, bool autoclose = true)
 		{
 			List<Dictionary<string, string>> lst = new List<Dictionary<string, string>>();
 			using (var rdr = cmd.ExecuteReader())
@@ -34,7 +34,10 @@ namespace PearXLib.SQL
 					}
 					lst.Add(dict);
 				}
+				rdr.Close();
 			}
+			if (autoclose)
+				cmd.Connection.Close();
 			return lst;
 		}
 
@@ -43,7 +46,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of columns.</returns>
 		/// <param name="cmd">Command.</param>
-		public static Dictionary<string, List<string>> ExecuteListColumns(this MySqlCommand cmd)
+		public static Dictionary<string, List<string>> ExecuteListColumns(this MySqlCommand cmd, bool autoclose = true)
 		{
 			Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
 
@@ -67,7 +70,10 @@ namespace PearXLib.SQL
 						}
 					}
 				}
+				rdr.Close();
 			}
+			if (autoclose)
+				cmd.Connection.Close();
 			return dict;
 		}
 
@@ -76,7 +82,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A single list.</returns>
 		/// <param name="cmd">Command.</param>
-		public static List<string> ExecuteSingleList(this MySqlCommand cmd)
+		public static List<string> ExecuteSingleList(this MySqlCommand cmd, bool autoclose = true)
 		{
 			List<string> lst = new List<string>();
 			using (var rdr = cmd.ExecuteReader())
@@ -92,7 +98,10 @@ namespace PearXLib.SQL
 						lst.Add(null);
 					}
 				}
+				rdr.Close();
 			}
+			if (autoclose)
+				cmd.Connection.Close();
 			return lst;
 		}
 	}
