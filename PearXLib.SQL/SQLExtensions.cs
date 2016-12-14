@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
 namespace PearXLib.SQL
@@ -25,7 +26,10 @@ namespace PearXLib.SQL
 					{
 						try
 						{
-							dict.Add(rdr.GetName(i), rdr.GetValue(i));
+							var val = rdr.GetValue(i);
+							if (val is DBNull)
+								val = null;
+							dict.Add(rdr.GetName(i), val);
 						}
 						catch
 						{
@@ -62,7 +66,10 @@ namespace PearXLib.SQL
 					{
 						try
 						{
-							dict[rdr.GetName(i)].Add(rdr.GetValue(i));
+							var val = rdr.GetValue(i);
+							if (val is DBNull)
+								val = null;
+							dict[rdr.GetName(i)].Add(val);
 						}
 						catch
 						{
@@ -91,7 +98,10 @@ namespace PearXLib.SQL
 				{
 					try
 					{
-						lst.Add(rdr.GetValue(0));
+						var val = rdr.GetValue(0);
+						if (val is DBNull)
+							val = null;
+						lst.Add(val);
 					}
 					catch
 					{
