@@ -13,19 +13,19 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of rows.</returns>
 		/// <param name="cmd">Command.</param>
-		public static List<Dictionary<string, string>> ExecuteListRows(this MySqlCommand cmd, bool autoclose = true)
+		public static List<Dictionary<string, object>> ExecuteListRows(this MySqlCommand cmd, bool autoclose = true)
 		{
-			List<Dictionary<string, string>> lst = new List<Dictionary<string, string>>();
+			List<Dictionary<string, object>> lst = new List<Dictionary<string, object>>();
 			using (var rdr = cmd.ExecuteReader())
 			{
 				while (rdr.Read())
 				{
-					Dictionary<string, string> dict = new Dictionary<string, string>();
+					Dictionary<string, object> dict = new Dictionary<string, object>();
 					for (int i = 0; i < rdr.FieldCount; i++)
 					{
 						try
 						{
-							dict.Add(rdr.GetName(i), rdr.GetString(i));
+							dict.Add(rdr.GetName(i), rdr.GetValue(i));
 						}
 						catch
 						{
@@ -46,15 +46,15 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of columns.</returns>
 		/// <param name="cmd">Command.</param>
-		public static Dictionary<string, List<string>> ExecuteListColumns(this MySqlCommand cmd, bool autoclose = true)
+		public static Dictionary<string, List<object>> ExecuteListColumns(this MySqlCommand cmd, bool autoclose = true)
 		{
-			Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+			Dictionary<string, List<object>> dict = new Dictionary<string, List<object>>();
 
 			using (var rdr = cmd.ExecuteReader())
 			{
 				for (int i = 0; i < rdr.FieldCount; i++)
 				{
-					dict.Add(rdr.GetName(i), new List<string>());
+					dict.Add(rdr.GetName(i), new List<object>());
 				}
 				while (rdr.Read())
 				{
@@ -62,7 +62,7 @@ namespace PearXLib.SQL
 					{
 						try
 						{
-							dict[rdr.GetName(i)].Add(rdr.GetString(i));
+							dict[rdr.GetName(i)].Add(rdr.GetValue(i));
 						}
 						catch
 						{
@@ -82,16 +82,16 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A single list.</returns>
 		/// <param name="cmd">Command.</param>
-		public static List<string> ExecuteSingleList(this MySqlCommand cmd, bool autoclose = true)
+		public static List<object> ExecuteSingleList(this MySqlCommand cmd, bool autoclose = true)
 		{
-			List<string> lst = new List<string>();
+			List<object> lst = new List<object>();
 			using (var rdr = cmd.ExecuteReader())
 			{
 				while (rdr.Read())
 				{
 					try
 					{
-						lst.Add(rdr.GetString(0));
+						lst.Add(rdr.GetValue(0));
 					}
 					catch
 					{
