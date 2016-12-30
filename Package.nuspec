@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PearXLib.SQL</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <authors>PearX Team</authors>
     <owners>PearX Team</owners>
     <licenseUrl>https://github.com/PearXTeam/PearXLib.SQL/blob/master/LICENSE.md</licenseUrl>
@@ -15,6 +15,7 @@
     <tags>pearxlib pearxlibsql sql pearxlib.sql mysql pxlsql</tags>
     <dependencies>
       <dependency id="MySql.Data" version="6.9.9"/>
+      <dependency id="PearXLib"/>
     </dependencies>
   </metadata>
   <files>

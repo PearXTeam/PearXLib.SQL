@@ -114,5 +114,10 @@ namespace PearXLib.SQL
 				cmd.Connection.Close();
 			return lst;
 		}
+
+		public static void AddEscaped(this MySqlParameterCollection p, string name, string value)
+		{
+			p.AddWithValue(name, SQLUtils.EscapePrepared(value));
+		}
 	}
 }
