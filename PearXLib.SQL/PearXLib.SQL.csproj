@@ -37,7 +37,7 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PearXLib">
-      <HintPath>..\packages\PearXLib.1.2.16\lib\net40\PearXLib.dll</HintPath>
+      <HintPath>..\..\LargeLauncher_4\packages\PearXLib.1.2.17\lib\net40\PearXLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
