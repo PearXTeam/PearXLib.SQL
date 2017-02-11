@@ -14,6 +14,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of rows.</returns>
 		/// <param name="cmd">Command.</param>
+		/// <param name="autoclose">Autoclose SQL connection after request?</param>
 		public static List<Dictionary<string, object>> ExecuteListRows(this MySqlCommand cmd, bool autoclose = true)
 		{
 			List<Dictionary<string, object>> lst = new List<Dictionary<string, object>>();
@@ -50,6 +51,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A list of columns.</returns>
 		/// <param name="cmd">Command.</param>
+		/// <param name="autoclose">Autoclose SQL connection after request?</param>
 		public static Dictionary<string, List<object>> ExecuteListColumns(this MySqlCommand cmd, bool autoclose = true)
 		{
 			Dictionary<string, List<object>> dict = new Dictionary<string, List<object>>();
@@ -89,6 +91,7 @@ namespace PearXLib.SQL
 		/// </summary>
 		/// <returns>A single list.</returns>
 		/// <param name="cmd">Command.</param>
+		/// <param name="autoclose">Autoclose SQL connection after request?</param>
 		public static List<object> ExecuteSingleList(this MySqlCommand cmd, bool autoclose = true)
 		{
 			List<object> lst = new List<object>();
@@ -115,6 +118,24 @@ namespace PearXLib.SQL
 			return lst;
 		}
 
+		/// <summary>
+		/// Executes a count query.
+		/// </summary>
+		/// <returns>Count.</returns>
+		/// <param name="cmd">Command.</param>
+		/// <param name="autoclose">Autoclose SQL connection after request?</param>
+		public static long ExecuteCount(this MySqlCommand cmd, bool autoclose = true)
+		{
+			var resp = cmd.ExecuteSingleList(autoclose);
+			return (long)resp[0];
+		}
+
+		/// <summary>
+		/// Adds an escaped string to the ParameterCollection
+		/// </summary>
+		/// <param name="p">Parameter collection.</param>
+		/// <param name="name">Name.</param>
+		/// <param name="value">Value.</param>
 		public static void AddEscaped(this MySqlParameterCollection p, string name, string value)
 		{
 			p.AddWithValue(name, SQLUtils.EscapePrepared(value));

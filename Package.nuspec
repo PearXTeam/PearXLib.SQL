@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PearXLib.SQL</id>
-    <version>1.0.7</version>
+    <version>1.1.0</version>
     <authors>PearX Team</authors>
     <owners>PearX Team</owners>
     <licenseUrl>https://github.com/PearXTeam/PearXLib.SQL/blob/master/LICENSE.md</licenseUrl>
