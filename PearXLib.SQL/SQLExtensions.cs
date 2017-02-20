@@ -131,12 +131,12 @@ namespace PearXLib.SQL
 		}
 
 		/// <summary>
-		/// Adds an escaped string to the ParameterCollection
+		/// Adds an escaped string to the ParameterCollection for using with LIKE request.
 		/// </summary>
 		/// <param name="p">Parameter collection.</param>
 		/// <param name="name">Name.</param>
 		/// <param name="value">Value.</param>
-		public static void AddEscaped(this MySqlParameterCollection p, string name, string value)
+		public static void AddLikeEscaped(this MySqlParameterCollection p, string name, string value)
 		{
 			p.AddWithValue(name, SQLUtils.EscapePrepared(value));
 		}

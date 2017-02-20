@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>PearXLib.SQL</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <authors>PearX Team</authors>
     <owners>PearX Team</owners>
     <licenseUrl>https://github.com/PearXTeam/PearXLib.SQL/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/PearXTeam/PearXLib.SQL</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/PearXTeam/PearXLib.SQL/master/logo_pxlsql.png</iconUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An open-source PearXLib's extension, that adds useful MySQL additions.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright (c) PearX Team, 2015-2016</copyright>
