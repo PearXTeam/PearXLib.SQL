@@ -15,7 +15,7 @@
     <tags>pearxlib pearxlibsql sql pearxlib.sql mysql pxlsql</tags>
     <dependencies>
       <dependency id="MySql.Data" version="6.9.9"/>
-      <dependency id="PearXLib"/>
+      <dependency id="PearXLib" version="1.4.0"/>
     </dependencies>
   </metadata>
   <files>
