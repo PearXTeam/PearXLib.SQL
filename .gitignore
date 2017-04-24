@@ -4,3 +4,4 @@ PearXLib.SQL/bin/*
 .directory
 *.userprefs
 packages/*
+*.nupkg
